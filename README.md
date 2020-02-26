@@ -9,6 +9,8 @@ You need to install the following Python packages. Please create a new environme
 * tqdm
 * numpy
 
+You can use our `requirements.txt` to setup your environment.
+
 ## Download data
 
 `icon.zip`: [(Download)](https://drive.google.com/file/d/1D0CFmDP0xNSyfSkK7kUHnfP0HnpcKZc1)
