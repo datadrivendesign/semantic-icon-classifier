@@ -5,9 +5,7 @@ Our code run on ``Python 2.7.12``.
 
 You need to install the following Python packages. Please create a new environment using your own Python package management (e.g. ``virtualenv``, ``Anaconda``).
 * keras 2.0.8
-* tensorflow-gpu 1.3.0
-* tqdm
-* numpy
+* tensorflow-gpu 1.8.0
 
 You can use our `requirements.txt` to setup your environment.
 
