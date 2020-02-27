@@ -1,6 +1,6 @@
 # Semantic Icon Classifier
 
-A CNN based model classifying 99 icon classes appear most often in Android apps. Sometimes, we have input images that do not belong to any of the 99 classes, either can be a random image or a very rarely used icon classes. Therefore, we develop an extract Anomaly detector to handle this case. Our work is presented in the paper "Learning Design Semantics for Mobile Apps".
+A CNN based model classifying 99 icon classes appear most often in Android apps. Sometimes, we have input images that do not belong to any of the 99 classes, either can be a random image or a very rarely used icon class. Therefore, we develop an extra Anomaly detector to handle this case. Our work is presented in the paper "Learning Design Semantics for Mobile Apps".
 
 ## Requirements
 Python: ``2.7.12``
@@ -109,5 +109,5 @@ python2 cnn_pretrain.py --anomaly --model_path ./saved_models/small_cnn_weights_
 ## Contributions
 * Paper: [Learning Design Semantics for Mobile Apps](http://interactionmining.org/rico)
 
-## If you have any question or acquire missing file, please contact:
+## If you have any question, please contact:
 * Jason Situ (junsitu2@illinois.edu)
