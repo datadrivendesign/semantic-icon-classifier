@@ -15,7 +15,7 @@ We provide a complete list of packages installed in our development machine `req
 
 ## Download data
 
-``data.zip``: [(Download)](https://drive.google.com/open?id=1SiD_U5ifjX1poJZzLB-MwvoUQBhutYzH)
+1. ``data.zip``: [(Download)](https://drive.google.com/open?id=1SiD_U5ifjX1poJZzLB-MwvoUQBhutYzH)
 
 
 What is inside:
@@ -42,7 +42,7 @@ y_train_embeddings.npy:
 
 ```
 
-``saved_models.zip``: [(Download)](https://drive.google.com/open?id=16hUHUzxkGHHBRsgvfeLV_4gTD3-KFYIy)
+2. ``saved_models.zip``: [(Download)](https://drive.google.com/open?id=16hUHUzxkGHHBRsgvfeLV_4gTD3-KFYIy)
 
 What is inside:
 ```
@@ -53,8 +53,8 @@ inv_anomaly.pkl: trained Anomaly Detection model (requires in model evaluation w
 datagen.pkl: file generated during training (requires in model evaluation)
 ```
 
-`icon.zip`: [(Download)](https://drive.google.com/file/d/1D0CFmDP0xNSyfSkK7kUHnfP0HnpcKZc1)
-You do not need this file in training the model. In the evaluation, you may need these files when passing an argument flag  ``--save_images``  to generate a testing sample. The generated file is stored in JSON. **Warning**: Over 100k of image files, becareful aftre you unzip it.
+3. `icon.zip`: [(Download)](https://drive.google.com/file/d/1D0CFmDP0xNSyfSkK7kUHnfP0HnpcKZc1)
+You do not need this zip file in training a model. In the evaluation, you may need these raw icon images when passing an argument flag  ``--save_images``  to generate a testing sample. The generated file is stored in JSON. **Warning**: Over 100k of image files, becareful aftre you unzip it.
 
 ## How to train our icon classifier
 
