@@ -1,33 +1,34 @@
 # Semantic Icon Classifier
 
-## Requirements
-Our code run on ``Python 2.7.12``.
+A CNN based model classifying 99 icon classes appear most often in Android apps. Sometimes, we have input images that do not belong to any of the 99 classes, either can be a random image or a very rarely used icon classes. Therefore, we develop an extract Anomaly detector to handle this case. Our work is presented in the paper "Learning Design Semantics for Mobile Apps".
 
-You need to install the following Python packages. Please create a new environment using your own Python package management (e.g. ``virtualenv``, ``Anaconda``).
+## Requirements
+Python: ``2.7.12``
+
+Create a new local environment using any package management tools (e.g. ``virtualenv``, ``Anaconda``). Then, install the following packages with the specified version.
 * keras 2.0.8
 * tensorflow 1.8.0
+* Pillow 5.2.0
+* mock 2.0.0
 
-You can use our `requirements.txt` to setup your environment.
+We provide a complete list of packages installed in our development machine `requirements.txt`.
 
 ## Download data
-
-`icon.zip`: [(Download)](https://drive.google.com/file/d/1D0CFmDP0xNSyfSkK7kUHnfP0HnpcKZc1)
-Training is not requre for this file. You may need it testing, but not require. Warning: a ton of image files in one zip, becareful aftre you unzip it.
 
 ``data.zip``: [(Download)](https://drive.google.com/open?id=1SiD_U5ifjX1poJZzLB-MwvoUQBhutYzH)
 
 
-What are inside this zip:
+What is inside:
 ```
-training_x.npy: training icons (require for both train and evaluation)
+training_x.npy: training icons (requires for both train and test evaluation)
 
-training_y.npy: training labels (require for both train and evaluation)
+training_y.npy: training labels (requires for both train and test evaluation)
 
-validation_x.npy: testing icons (require for both train and evaluation)
+validation_x.npy: testing icons (requires for both train and test evaluation)
 
-validation_y.npy: testing labels (require for both train and evaluation)
+validation_y.npy: testing labels (requires for both train and test evaluation)
 
-validation_metadata.json: meta information about each icon (require for both train and evaluation)
+validation_metadata.json: meta information about each icon (require for both train and test evaluation)
 
 anomalies_embeddings.npy:
 
@@ -43,22 +44,25 @@ y_train_embeddings.npy:
 
 ``saved_models.zip``: [(Download)](https://drive.google.com/open?id=16hUHUzxkGHHBRsgvfeLV_4gTD3-KFYIy)
 
-What are inside this zip:
+What is inside:
 ```
-anomaly.pkl: trained Anomaly Detection model (require in model evaluation with anomaly detector)
+anomaly.pkl: trained Anomaly Detection model (requires in model evaluation with anomaly detector)
 
-inv_anomaly.pkl: trained Anomaly Detection model (require in model evaluation with anomaly detector)
+inv_anomaly.pkl: trained Anomaly Detection model (requires in model evaluation with anomaly detector)
 
-datagen.pkl: file generated during training (require in model evaluation)
+datagen.pkl: file generated during training (requires in model evaluation)
 ```
+
+`icon.zip`: [(Download)](https://drive.google.com/file/d/1D0CFmDP0xNSyfSkK7kUHnfP0HnpcKZc1)
+You do not need this file in training the model. In the evaluation, you may need these files when passing an argument flag  ``--save_images``  to generate a testing sample. The generated file is stored in JSON. **Warning**: Over 100k of image files, becareful aftre you unzip it.
 
 ## How to train our icon classifier
 
 #### Step 1
 
-Unzip `data.zip` in current directory.
+Unzip `data.zip` in the current directory.
 
-Create a folder call ``saved_models``. You don't have to worry about `datagen.pkl`, this file will be generated during the training process.
+Create a folder ``saved_models``. Ignore `datagen.pkl` that we provided, this file is generated again during the training process.
 
 #### Step 2
 
@@ -66,7 +70,7 @@ Create a folder call ``saved_models``. You don't have to worry about `datagen.pk
 python2 cnn_pretrain.py
 ```
 
-At end of the training, you will see the following evaluation for both training and testing set printed:
+When training is finish, you will see the following message printed in the terminal:
 
 ```
 Accuracy on train data is: 99.68
@@ -81,10 +85,10 @@ Macro precision
 Macro recall
 0.8552836877294613
 ```
-These results are evaluate without anomaly detector. Our trained model is ``small_cnn_weights_100_512.h5``[(Download)](https://drive.google.com/file/d/1Kq5agoiLSuv5_CVBlkf5F7iENtpyKyz8).
+These results are evaluated without anomaly detector. Our trained model is ``small_cnn_weights_100_512.h5``[(Download)](https://drive.google.com/file/d/1Kq5agoiLSuv5_CVBlkf5F7iENtpyKyz8).
 
 
-## How to evaluate your icon classifier from a trained model
+## Evaluate your icon classifier from a saved model
 
 #### Evaluate without anomaly detection
 ```
@@ -99,10 +103,11 @@ python2 cnn_pretrain.py --anomaly --model_path ./saved_models/small_cnn_weights_
 ```
 
 ## Notes
-* You can change any training hyperparameter in `settings.py`. Our default CNN training epoch is `100`.
+* You can change any hyperparameters in `settings.py`. 
+* Our default CNN training epoch is `100`.
 
 ## Contributions
 * Paper: [Learning Design Semantics for Mobile Apps](http://interactionmining.org/rico)
 
-## If you have any question or missing file, please contact:
+## If you have any question or acquire missing file, please contact:
 * Jason Situ (junsitu2@illinois.edu)
