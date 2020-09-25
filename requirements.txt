@@ -49,7 +49,7 @@ tensorboard==1.8.0
 tensorboardX==1.6
 tensorflow==1.8.0
 tensorflow-estimator==1.14.0
-tensorflow-gpu==1.14.0
+tensorflow-gpu==1.15.4
 termcolor==1.1.0
 toolz==0.9.0
 torchfile==0.1.0
