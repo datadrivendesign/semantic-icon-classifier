@@ -37,7 +37,7 @@ pyparsing==2.4.6
 python-dateutil==2.8.1
 pytz==2019.3
 PyWavelets==1.0.3
-PyYAML==5.3
+PyYAML==5.4
 ruamel.ordereddict==0.4.13
 ruamel.yaml==0.15.95
 scikit-image==0.14.2
