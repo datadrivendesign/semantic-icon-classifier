@@ -47,7 +47,7 @@ six==1.14.0
 subprocess32==3.5.4
 tensorboard==1.8.0
 tensorboardX==1.6
-tensorflow==1.8.0
+tensorflow==2.5.0
 tensorflow-estimator==1.14.0
 tensorflow-gpu==1.14.0
 termcolor==1.1.0
